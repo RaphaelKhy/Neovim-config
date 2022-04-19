@@ -43,8 +43,8 @@ return packer.startup(function(use)
   use "wbthomason/packer.nvim" -- Package Manager
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
-  use "numToStr/Comment.nvim" -- Easily comment stuff
-  use "kyazdani42/nvim-web-devicons"
+  use "numToStr/Comment.nvim" -- Commenting
+  use "kyazdani42/nvim-web-devicons" -- icons
   use "kyazdani42/nvim-tree.lua"
   use "akinsho/bufferline.nvim"
   use "moll/vim-bbye"
@@ -58,12 +58,13 @@ return packer.startup(function(use)
   use "folke/which-key.nvim"
 
   -- Autopairs
-  use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
+  use "windwp/nvim-autopairs" -- Autopairs for brackets, etc
   use "windwp/nvim-ts-autotag" -- Autopairs for HTML, JSX
 
   -- Colorschemes
   use "lunarvim/colorschemes"
   use "lunarvim/darkplus.nvim"
+  use 'marko-cerovac/material.nvim'
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin

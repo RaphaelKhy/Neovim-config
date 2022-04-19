@@ -6,3 +6,6 @@ catch /^Vim\%((\a\+)\)\=:E185/
   set background=dark
 endtry
 ]]
+
+-- material colorscheme
+vim.g.material_style = "darker"
