@@ -31,3 +31,18 @@ if not cmp_status_ok then
   return
 end
 cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done { map_char = { tex = "" } })
+
+-- Setup ts-autotag
+local ok_autotag, autotag = pcall(require, "nvim-ts-autotag")
+if not ok_autotag then
+	print("Failed to requrie `nvim-ts-autotag`.")
+	return
+end
+
+npairs.setup({
+	fast_wrap = {},
+	check_ts = true,
+	enable_check_bracket_line = true,
+})
+
+autotag.setup()
