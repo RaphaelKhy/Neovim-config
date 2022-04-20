@@ -43,12 +43,12 @@ return packer.startup(function(use)
   use "wbthomason/packer.nvim" -- Package Manager
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
-  use "numToStr/Comment.nvim" -- Commenting
+  use "numToStr/Comment.nvim" -- commenting
   use "kyazdani42/nvim-web-devicons" -- icons
-  use "kyazdani42/nvim-tree.lua"
-  use "akinsho/bufferline.nvim"
-  use "moll/vim-bbye"
-  use "nvim-lualine/lualine.nvim"
+  use "kyazdani42/nvim-tree.lua" -- file explorer
+  use "akinsho/bufferline.nvim" -- tabs
+  use "moll/vim-bbye" -- deleting buffers
+  use "nvim-lualine/lualine.nvim" -- statusline
   use "akinsho/toggleterm.nvim"
   use "ahmedkhalf/project.nvim"
   use "lewis6991/impatient.nvim"
@@ -56,6 +56,7 @@ return packer.startup(function(use)
   use "goolord/alpha-nvim"
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "folke/which-key.nvim"
+  use "ap/ap/vim-css-colorvim-css-color"
 
   -- Autopairs
   use "windwp/nvim-autopairs" -- Autopairs for brackets, etc
@@ -65,6 +66,7 @@ return packer.startup(function(use)
   use "lunarvim/colorschemes"
   use "lunarvim/darkplus.nvim"
   use 'marko-cerovac/material.nvim'
+  use "ellisonleao/gruvbox.nvim"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -83,6 +85,7 @@ return packer.startup(function(use)
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+  use 'navarasu/onedark.nvim'
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
@@ -98,8 +101,7 @@ return packer.startup(function(use)
   use "lewis6991/gitsigns.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
-  if PACKER_BOOTSTRAP then
+  if PACKER_BOOTSTRAP then -- Put this at the end after all plugins
     require("packer").sync()
   end
 end)

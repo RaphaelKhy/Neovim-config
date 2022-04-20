@@ -7,5 +7,10 @@ catch /^Vim\%((\a\+)\)\=:E185/
 endtry
 ]]
 
--- material colorscheme
+-- material settings
 vim.g.material_style = "darker"
+
+-- onedark settings
+require('onedark').setup {
+  style = 'darker'
+}
