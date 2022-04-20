@@ -1,2 +1,1 @@
-1. Add autocompletion for javascript and react
-2. map ; as : preferably with neovim, otherwise with autohotkey
+1. add git fugitive

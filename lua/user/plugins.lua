@@ -1,6 +1,6 @@
 local fn = vim.fn
 
--- Automatically install packer
+-- Install packer
 local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
   PACKER_BOOTSTRAP = fn.system {
@@ -16,12 +16,12 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
-vim.cmd [[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup end
-]]
+-- vim.cmd [[
+--   augroup packer_user_config
+--     autocmd!
+--     autocmd BufWritePost plugins.lua source <afile> | PackerSync
+--   augroup end
+-- ]]
 
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
@@ -38,7 +38,6 @@ packer.init {
   },
 }
 
--- Install your plugins here
 return packer.startup(function(use)
   use "wbthomason/packer.nvim" -- Package Manager
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
@@ -60,15 +59,16 @@ return packer.startup(function(use)
   use "Pocco81/AutoSave.nvim"
 
   -- Autopairs
-  use "windwp/nvim-autopairs" -- Autopairs for brackets, etc
-  use "windwp/nvim-ts-autotag" -- Autopairs for HTML, JSX
+  use "windwp/nvim-autopairs" -- brackets, etc
+  use "windwp/nvim-ts-autotag" -- HTML, JSX
 
   -- Colorschemes
   use "lunarvim/colorschemes"
   use "lunarvim/darkplus.nvim"
   use 'marko-cerovac/material.nvim'
   use "ellisonleao/gruvbox.nvim"
-
+  use 'navarasu/onedark.nvim'
+  
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
   use "hrsh7th/cmp-buffer" -- buffer completions
@@ -86,7 +86,6 @@ return packer.startup(function(use)
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
-  use 'navarasu/onedark.nvim'
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
