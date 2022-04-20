@@ -56,7 +56,8 @@ return packer.startup(function(use)
   use "goolord/alpha-nvim"
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "folke/which-key.nvim"
-  use "ap/ap/vim-css-colorvim-css-color"
+  use "ap/vim-css-color"
+  use "Pocco81/AutoSave.nvim"
 
   -- Autopairs
   use "windwp/nvim-autopairs" -- Autopairs for brackets, etc
