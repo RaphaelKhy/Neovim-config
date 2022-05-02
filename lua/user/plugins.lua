@@ -15,14 +15,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
   vim.cmd [[packadd packer.nvim]]
 end
 
--- Autocommand that reloads neovim whenever you save the plugins.lua file
--- vim.cmd [[
---   augroup packer_user_config
---     autocmd!
---     autocmd BufWritePost plugins.lua source <afile> | PackerSync
---   augroup end
--- ]]
-
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
@@ -44,11 +36,14 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "numToStr/Comment.nvim" -- commenting
   use "kyazdani42/nvim-web-devicons" -- icons
-  use "kyazdani42/nvim-tree.lua" -- file explorer
+  use {
+    "kyazdani42/nvim-tree.lua", -- file explorer
+    commit = "0f0f858348aacc94f98ba32880760c5a5440b825",
+  }
   use "akinsho/bufferline.nvim" -- tabs
   use "moll/vim-bbye" -- deleting buffers
   use "nvim-lualine/lualine.nvim" -- statusline
-  use "akinsho/toggleterm.nvim"
+  use "akinsho/toggleterm.nvim" -- toggle terminal
   use "ahmedkhalf/project.nvim"
   use "lewis6991/impatient.nvim"
   use "lukas-reineke/indent-blankline.nvim"
@@ -57,6 +52,7 @@ return packer.startup(function(use)
   use "folke/which-key.nvim"
   use "ap/vim-css-color"
   use "Pocco81/AutoSave.nvim"
+  use "github/copilot.vim"
 
   -- Autopairs
   use "windwp/nvim-autopairs" -- brackets, etc
@@ -68,7 +64,10 @@ return packer.startup(function(use)
   use 'marko-cerovac/material.nvim'
   use "ellisonleao/gruvbox.nvim"
   use 'navarasu/onedark.nvim'
-  
+  use 'folke/tokyonight.nvim'
+  use 'rafi/awesome-vim-colorschemes'
+  use 'phanviet/vim-monokai-pro'
+
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
   use "hrsh7th/cmp-buffer" -- buffer completions
@@ -89,11 +88,13 @@ return packer.startup(function(use)
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
+  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
   -- Treesitter
   use {
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
+    commit = "2472e47e15eb56e8d6d421d7c2c7169140db2813",
   }
   use "JoosepAlviste/nvim-ts-context-commentstring"
 

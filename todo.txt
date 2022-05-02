@@ -1,1 +1,2 @@
 1. add git fugitive
+2. figure out why telescope find file is so slow
